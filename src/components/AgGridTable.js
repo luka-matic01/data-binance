@@ -77,6 +77,12 @@ const AgGridTable = () => {
   const paginationPageSize = 10;
   const pagination = true;
 
+  const overlayNoRowsTemplate = `
+    <div class="ag-overlay-loading-center">
+      <div class="loading-spinner"></div>
+    </div>
+  `;
+
   return (
     <div className="flex flex-col justify-center items-center bg-[#2c4634] h-screen">
       <div className="flex gap-2 items-center">
@@ -92,7 +98,7 @@ const AgGridTable = () => {
           rowData={rowData}
           columnDefs={columnDefs}
           defaultColDef={defaultColDef}
-          overlayNoRowsTemplate={`<div>Loading</div>`}
+          overlayNoRowsTemplate={overlayNoRowsTemplate}
           pagination={pagination}
           paginationPageSize={paginationPageSize}
         />
